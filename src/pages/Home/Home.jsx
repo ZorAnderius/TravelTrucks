@@ -1,6 +1,4 @@
-import Container from "../../components/Container/Container";
-import LinkButton from "../../components/LinkButton/LinkButton";
-import Section from "../../components/Section/Section";
+import { Container, LinkButton, Section } from "../../components";
 import { ROUTES_NAME } from "../../helpers/constants/routes";
 
 import styles from './Home.module.css';

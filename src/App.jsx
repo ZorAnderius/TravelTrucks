@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "modern-normalize";
-import Header from "./components/Header/Header";
-import Home from "./pages/Home/Home";
-import Catalog from "./pages/Catalog/Catalog";
+import { Header } from "./components";
+import { Catalog, Home } from "./pages";
+import { ROUTES_NAME } from "./helpers";
 import styles from './App.module.css'
-import { ROUTES_NAME } from "./helpers/constants/routes";
+
 
 const App = () => {
   return (
