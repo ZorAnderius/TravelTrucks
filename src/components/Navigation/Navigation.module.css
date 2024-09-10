@@ -1,0 +1,29 @@
+.navContainer {
+  max-width: 624px;
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.navLink {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: color var(--transition-time) ease-in;
+}
+
+
+.navLink:is(:hover, :focus),
+.active{
+    color: var(--btn-hover-color);
+}
