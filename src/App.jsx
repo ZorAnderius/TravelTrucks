@@ -1,13 +1,20 @@
-import 'modern-normalize';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "modern-normalize";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import Catalog from "./pages/Catalog/Catalog";
 
-function App() {
-
+const App = () => {
   return (
     <>
-      <h1>Home</h1>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/catalog" element={<Catalog />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
