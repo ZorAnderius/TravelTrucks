@@ -1,0 +1,19 @@
+.heroContent {
+  position: relative;
+  padding-top: 260px;
+  display: flex;
+  flex-direction: column;
+  color: var(--element-txt-color);
+  font-size: 48px;
+  line-height: 1.33;
+  z-index: 1;
+}
+
+.heroTitle{
+    margin-bottom: 16px;
+}
+
+.heroSubtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
