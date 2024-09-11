@@ -6,7 +6,7 @@ import styles from './Home.module.css';
 const Home = () => {
   return (
     <>
-      <Section style='hero'>
+      <Section style={styles.hero}>
         <Container>
           <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>Campers of your dreams</h1>

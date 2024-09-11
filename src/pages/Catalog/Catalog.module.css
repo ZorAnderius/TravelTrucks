@@ -1,0 +1,9 @@
+.catalog{
+    padding: 48px 0 52px 0;
+}
+
+.catalogContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

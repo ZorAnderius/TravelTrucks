@@ -1,13 +1,13 @@
 :root {
-  --primary-color: #101828ff;
-  --secondary-color: #ffffffff;
-  --main-txt-color: #475467ff;
+  --primary-color: #101828;
+  --secondary-color: #ffffff;
+  --main-txt-color: #475467;
   --element-txt-color: #F7F7F7;
-  --btn-color: #e44848ff;
-  --btn-hover-color: #d84343ff;
-  --gray-color: #6c717bff;
-  --gray-light-color: #dadde1ff;
-  --gray-100-color: #f2f4f7ff;
-  --rating-color: #ffc531ff;
+  --btn-color: #E44848;
+  --btn-hover-color: #D84343;
+  --gray-color: #6c717b;
+  --gray-light-color: #dadde1;
+  --gray-100-color: #f2f4f7;
+  --rating-color: #ffc531;
   --transition-time: 0.3s;
 }

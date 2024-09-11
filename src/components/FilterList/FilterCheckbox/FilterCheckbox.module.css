@@ -1,0 +1,32 @@
+.checkboxContainer {
+  width: 112px;
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-light-color);
+  transition: border var(--transition-time) ease-in;
+  mix-blend-mode: multiply;
+}
+
+.iconStyle {
+  font-size: 32px;
+}
+
+.checkboxTitle {
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5; 
+  letter-spacing: -0.08px;
+}
+
+.active{
+  border: 1px solid var(--btn-color);;
+}

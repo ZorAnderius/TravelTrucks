@@ -1,8 +1,6 @@
-import styles from './Section.module.css';
-
 const Section = ({ style = '', children }) => {
   return (
-      <section className={styles[style]}>{children}</section>
+      <section className={style}>{children}</section>
   )
 }
 

@@ -11,7 +11,6 @@ export default defineConfig({
       components: "/src/components",
       pages: "/src/pages",
       helpers: "/src/helpers",
-      styles: "/src/styles",
       redux: "/src/redux",
       assets: "/src/assets",
     },

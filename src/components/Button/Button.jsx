@@ -1,9 +1,11 @@
-import styles from './Button.module.css';
+import styles from "./Button.module.css";
 
-const Button = ({children}) => {
+const Button = ({ type, style, children }) => {
   return (
-      <button>{children}</button>
-  )
-}
+    <button type={type} className={styles[style]}>
+      {children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;

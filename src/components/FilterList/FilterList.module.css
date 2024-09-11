@@ -1,0 +1,60 @@
+.filterAside {
+  position: sticky;
+  max-width: 360px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.locationFilter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.locationTitle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray-color);
+}
+
+.locationInput {
+  border-radius: 12px;
+  padding: 18px;
+  padding-left: 48px;
+  outline: none;
+  border: none;
+  background: var(--element-txt-color);
+}
+
+.iconsMap {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  font-size: 20px;
+  color: var(--gray-color);
+  transition: color var(--transition-time) ease-in;
+}
+
+.locationInput:focus + .iconsMap,
+.locationInput:not(:placeholder-shown) + .iconsMap {
+  color: var(--primary-color);
+}
+
+.mainTitle {
+  color: var(--main-txt-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.filterListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
