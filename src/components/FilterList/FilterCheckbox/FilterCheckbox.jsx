@@ -6,7 +6,6 @@ const isRadio = (type) => type === "radio";
 
 const FilterCheckbox = ({ title, style, field: { name, value }, type }) => {
   const [field, _, helpers] = useField({ name, value, type });
-  console.log(field);
 
   const handleChange = () => {
     isRadio(type)

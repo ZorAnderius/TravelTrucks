@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import clsx from "clsx";
-import { ROUTES_NAME } from "../../helpers/constants/routes";
-import logoIcon from '../../assets/logo.svg';
+import { ROUTES_NAME } from "../../../helpers/constants/routesVariable";
+import logoIcon from "../../../assets/logo.svg";
 import styles from "./Navigation.module.css";
 
 const styleBuilder = ({ isActive }) =>

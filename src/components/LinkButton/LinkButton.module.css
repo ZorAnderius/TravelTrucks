@@ -6,14 +6,23 @@
   text-align: center;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.5; 
+  line-height: 1.5;
   letter-spacing: -0.08px;
   color: var(--secondary-color);
   background-color: var(--btn-color);
   border-radius: 200px;
-  transition: background-color var(--transition-time) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: background-color var(--transition-time)
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.btnLink:is(:hover, :focus){
+.btnLink:is(:hover, :focus) {
   background-color: var(--btn-hover-color);
+}
+
+.reviewLink {
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  text-underline-offset: 3px; 
+  color: var(--primary-color);
 }

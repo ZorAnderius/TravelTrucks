@@ -1,0 +1,86 @@
+.thumbVehicle {
+  max-width: 292px;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 10px;
+  filter: contrast(1.3);
+}
+
+.imgVehicle {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.vehicleInfoContainer {
+  color: var(--primary-color);
+  max-width: 524px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.titleContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titleWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleCard {
+  max-width: 350px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.priceSubscribe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:12px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.ratingLocationWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.ratingWrapper,
+.locationWrapper{
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:4px;
+}
+
+.rating {
+  font-size: 16px;
+  color: var(--rating-color);
+}
+
+.descriptionCard{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
