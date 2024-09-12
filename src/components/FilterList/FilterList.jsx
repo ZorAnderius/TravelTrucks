@@ -33,21 +33,18 @@ const FilterList = () => {
           </div>
           <div className={styles.filterListContainer}>
             <h2 className={styles.mainTitle}>Filters</h2>
-            <VehicleFields
-              type="checkbox"
-              data={vehicleEquipment}
-            >
+            <VehicleFields type="checkbox" data={vehicleEquipment}>
               Vehicle equipment
             </VehicleFields>
             <VehicleFields
               type="radio"
-              name={{name: 'type'}}
+              name={{ name: "type" }}
               data={vehicleType}
             >
               Vehicle type
             </VehicleFields>
           </div>
-          <Button type="submit" style="submitBtn">
+          <Button type="submit" style={styles.submitBtn}>
             Search
           </Button>
         </Form>

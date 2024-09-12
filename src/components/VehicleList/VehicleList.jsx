@@ -6,7 +6,6 @@ import styles from "./VehicleList.module.css";
 
 const VehicleList = () => {
   const vehicles = useSelector(selectVehicles);
-  console.log(vehicles);
   return vehicles?.length > 0 && (
     <ul className={styles.vehicleContainer}>
       {

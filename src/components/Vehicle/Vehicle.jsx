@@ -2,38 +2,34 @@ import clsx from "clsx";
 import LinkButton from "../LinkButton/LinkButton";
 import styles from "./Vehicle.module.css";
 import Button from "../Button/Button";
+import { convertVehiclesData } from "../../helpers/convertVehicleData/convertVehiclesData";
+import VehicleFacilities from "../VehicleFacilities/VehicleFacilities";
+import { useMemo } from "react";
 
 const Vehicle = ({ vehicle }) => {
-  console.log(vehicle);
   const {
     id,
-    gallery,
     name,
+    imgVehicle,
     price,
     rating,
     reviews,
     location,
     description,
-    AC,
-    TV,
-    bathroom,
-    engine,
-    kitchen,
-    transmission,
-    radio,
-  } = vehicle;
+    facilities,
+  } = useMemo(() => convertVehiclesData(vehicle), [vehicle]);
   return (
     <>
       <div className={styles.thumbVehicle}>
-        <img className={styles.imgVehicle} src={gallery[0].thumb} alt={name} />
+        <img className={styles.imgVehicle} src={imgVehicle} alt={name} />
       </div>
       <div className={styles.vehicleInfoContainer}>
         <div className={styles.titleContainer}>
           <div className={styles.titleWrap}>
             <h2 className={styles.titleCard}>{name}</h2>
             <div className={styles.priceSubscribe}>
-              <p>€{price}.00</p>
-              <Button style={`subscribeBtn`}>
+              <p>{price}</p>
+              <Button style={styles.subscribeBtn}>
                 <span className="icon-heart"></span>
               </Button>
             </div>
@@ -41,10 +37,9 @@ const Vehicle = ({ vehicle }) => {
           <div className={styles.ratingLocationWrapper}>
             <div className={styles.ratingWrapper}>
               <span className={clsx("icon-rating", styles.rating)}></span>
-              <LinkButton style="reviewLink">
+              <LinkButton style={styles.reviewLink}>
                 <p>
-                  {rating}({reviews.length}{" "}
-                  {reviews.length <= 1 ? "Review" : "Reviews"})
+                  {rating}({reviews} {reviews <= 1 ? "Review" : "Reviews"})
                 </p>
               </LinkButton>
             </div>
@@ -55,8 +50,13 @@ const Vehicle = ({ vehicle }) => {
           </div>
         </div>
         <p className={styles.descriptionCard}>{description}</p>
-        <div></div>
-        <div></div>
+        <ul className={styles.facilitiesContainer}>
+          {facilities?.map((facility) => (
+            <li key={facility.id} className={styles.facilitiesItem}>
+              <VehicleFacilities info={facility} />
+            </li>
+          ))}
+        </ul>
         <LinkButton>Show more</LinkButton>
       </div>
     </>

@@ -58,3 +58,23 @@
   flex-direction: column;
   gap: 32px;
 }
+
+.submitBtn {
+  border-radius: 200px;
+  border: none;
+  background: var(--btn-color);
+  width: 166px;
+  padding: 16px;
+  text-align: center;
+  color: var(--secondary-color);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  transition: background-color var(--transition-time)
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.submitBtn:is(:hover, :focus) {
+  background-color: var(--btn-hover-color);
+}
+

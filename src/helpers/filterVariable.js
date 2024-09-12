@@ -1,16 +1,24 @@
 import { nanoid } from "nanoid";
 
+export const vehicleTransmission = {
+    id: nanoid(),
+    title: "automatic",
+    iconStyle: "icon-diagram",
+};
+  
+export const vehicleEngine = {
+  id: nanoid(),
+  title: "petrol",
+  iconStyle: "icon-petrol",
+};
+
 export const vehicleEquipment = [
   {
     id: nanoid(),
     title: "AC",
     iconStyle: "icon-wind",
   },
-  {
-    id: nanoid(),
-    title: "automatic",
-    iconStyle: "icon-diagram",
-  },
+  vehicleTransmission,
   {
     id: nanoid(),
     title: "kitchen",

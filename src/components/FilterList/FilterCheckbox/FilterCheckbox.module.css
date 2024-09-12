@@ -8,8 +8,9 @@
   align-items: center;
   gap: 8px;
   border-radius: 12px;
+  box-shadow: transparent;
   border: 1px solid var(--gray-light-color);
-  transition: border var(--transition-time) ease-in;
+  transition: border, box-shadow var(--transition-time) ease-in;
   mix-blend-mode: multiply;
 }
 
@@ -28,5 +29,8 @@
 }
 
 .active{
-  border: 1px solid var(--btn-color);;
+  border: 1px solid var(--btn-color);
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
 }
