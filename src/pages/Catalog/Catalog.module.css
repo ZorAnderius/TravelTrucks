@@ -1,13 +1,14 @@
-.catalog{
-    padding: 48px 0 52px 0;
+.catalog {
+  padding: 48px 0 52px 0;
 }
 
-.catalogContainer{
-    display: flex;
-    flex-direction: row;
-    gap: 64px;
+.catalogContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 64px;
 }
 
-.loadMore{
-    border: 1px solid var(---gray-light-color);
+.loadMore {
+  border: 1px solid var(---gray-light-color);
 }

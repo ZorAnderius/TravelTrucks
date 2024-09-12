@@ -9,7 +9,7 @@ const Catalog = () => {
   
   useEffect(() => {
     dispatch(fetchAllVehicle());
-  })
+  }, [dispatch]); 
 
   return (
     <main>

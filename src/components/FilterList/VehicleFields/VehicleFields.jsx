@@ -7,11 +7,11 @@ const VehicleFields = ({ children, name, type, data }) => {
     <div className={styles.filterFieldContainer}>
       <h2 className={styles.filterTitle}>{children}</h2>
       <div className={styles.vehicleContainer}>
-        {data?.map(({ id, title, iconStyle }) => (
+        {data?.map(({ id, title, value, iconStyle }) => (
           <Field
             key={id}
             name={type === "radio" ? name : title}
-            value={type === "radio" ? title : undefined}
+            value={type === "radio" ? value : undefined}
             type={type}
             title={title}
             style={iconStyle}

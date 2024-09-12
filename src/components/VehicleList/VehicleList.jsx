@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectVehicles } from "../../redux/vehicle/selector";
+import { selectFilteredVehicles, selectVehicles } from "../../redux/vehicle/selector";
 import Vehicle from "../Vehicle/Vehicle";
 import Button from "../Button/Button";
 
@@ -10,7 +10,7 @@ const perPage = 4;
 
 const VehicleList = () => {
   const [visibleVehicle, setVisibleVehicle] = useState(perPage);
-  const vehicles = useSelector(selectVehicles);
+  const vehicles = useSelector(selectFilteredVehicles);
 
   const handleClick = () => {
     setVisibleVehicle((prevPage) => prevPage + perPage);
@@ -19,7 +19,7 @@ const VehicleList = () => {
   
   return (
     <div className={styles.catalogWrapper}>
-      {vehicles?.length > 0 && (
+      {vehicles?.length > 0 ? (
         <ul className={styles.vehicleContainer}>
           {vehicles?.slice(0, visibleVehicle).map((vehicle) => (
             <li key={vehicle.id} className={styles.vehicleCard}>
@@ -27,8 +27,13 @@ const VehicleList = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <div className={styles.noFoundWrapper}>
+          <h3 className={styles.noFound}>No vehicles found</h3>
+        </div>
       )}
-      {visibleVehicle < vehicles.length && (
+
+      {visibleVehicle < vehicles?.length && (
         <Button styleProp="loadMore" handleClick={handleClick}>
           LoadMore
         </Button>
