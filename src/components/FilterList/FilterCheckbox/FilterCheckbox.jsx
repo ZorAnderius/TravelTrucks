@@ -4,16 +4,18 @@ import clsx from "clsx";
 
 const isRadio = (type) => type === "radio";
 
-const FilterCheckbox = ({ title, style, field: { name, value }, type }) => {
-  const [field, _, helpers] = useField({ name, value, type });
+const FilterCheckbox = ({ title, style, field, type }) => {
+  const { name, value, checked } = field;
+  const [fieldProps, , helpers] = useField(name);
+  console.log(field);
 
   const handleChange = () => {
     isRadio(type)
-      ? helpers.setValue(field.value)
-      : helpers.setValue(!field.value);
+      ? helpers.setValue(value)
+      : helpers.setValue(!fieldProps.value);
   };
 
-  const styleValue = isRadio(type) ? field.checked : field.value;
+  const styleValue = isRadio(type) ? checked : value;
   return (
     <button
       type="button"
