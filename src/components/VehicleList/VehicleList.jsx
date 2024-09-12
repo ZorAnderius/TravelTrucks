@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
-import { selectFilteredVehicles, selectVehicles } from "../../redux/vehicle/selector";
+import { useEffect, useState } from "react";
+
+import { selectFilteredVehicles } from "../../redux/vehicle/selector";
 import Vehicle from "../Vehicle/Vehicle";
 import Button from "../Button/Button";
 
 import styles from "./VehicleList.module.css";
-import {useState } from "react";
 
 const perPage = 4;
 
@@ -15,6 +16,10 @@ const VehicleList = () => {
   const handleClick = () => {
     setVisibleVehicle((prevPage) => prevPage + perPage);
   };
+
+  useEffect(() => {
+    setVisibleVehicle(perPage);
+  },[vehicles])
 
   
   return (
