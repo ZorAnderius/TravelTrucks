@@ -24,7 +24,6 @@ export const convertVehiclesData = ({
     radio,
     engine, transmission
   })
-  console.log(facilitiesData);
 
   return {
     ...vehicles,

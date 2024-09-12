@@ -44,7 +44,7 @@ const FilterList = () => {
               Vehicle type
             </VehicleFields>
           </div>
-          <Button type="submit" style={styles.submitBtn}>
+          <Button type="submit" styleProp="submitBtn">
             Search
           </Button>
         </Form>

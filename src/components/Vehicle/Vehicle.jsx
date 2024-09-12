@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import LinkButton from "../LinkButton/LinkButton";
 import styles from "./Vehicle.module.css";
-import Button from "../Button/Button";
 import { convertVehiclesData } from "../../helpers/convertVehicleData/convertVehiclesData";
 import VehicleFacilities from "../VehicleFacilities/VehicleFacilities";
 import { useMemo } from "react";
@@ -29,15 +28,15 @@ const Vehicle = ({ vehicle }) => {
             <h2 className={styles.titleCard}>{name}</h2>
             <div className={styles.priceSubscribe}>
               <p>{price}</p>
-              <Button style={styles.subscribeBtn}>
+              <button className={styles.subscribeBtn}>
                 <span className="icon-heart"></span>
-              </Button>
+              </button>
             </div>
           </div>
           <div className={styles.ratingLocationWrapper}>
             <div className={styles.ratingWrapper}>
               <span className={clsx("icon-rating", styles.rating)}></span>
-              <LinkButton style={styles.reviewLink}>
+              <LinkButton styleProp={styles.reviewLink}>
                 <p>
                   {rating}({reviews} {reviews <= 1 ? "Review" : "Reviews"})
                 </p>

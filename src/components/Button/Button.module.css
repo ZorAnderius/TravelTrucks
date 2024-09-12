@@ -1,0 +1,32 @@
+.btn {
+  border-radius: 200px;
+  border: none;
+  padding: 16px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+}
+
+
+.submitBtn {
+  composes: btn;
+  background: var(--btn-color);
+  max-width: 166px;
+  width: 100%;
+  padding: 16px;
+  color: var(--secondary-color);
+  transition: background-color var(--transition-time)
+    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.submitBtn:is(:hover, :focus) {
+  background-color: var(--btn-hover-color);
+}
+
+.loadMore{
+  composes: btn;
+  max-width: 145px;
+  width: 100%;
+  
+}
