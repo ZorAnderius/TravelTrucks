@@ -3,11 +3,18 @@ import LinkButton from "../LinkButton/LinkButton";
 import styles from "./Vehicle.module.css";
 import { convertVehiclesData } from "../../helpers/convertVehicleData/convertVehiclesData";
 import VehicleFacilities from "../VehicleFacilities/VehicleFacilities";
-import { useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../../redux/vehicle/slice";
+import { useCallback, useEffect, useState } from "react";
+import { selectFavorites } from "../../redux/vehicle/selector";
 
 const Vehicle = ({ vehicle }) => {
+  const [active, setActive] = useState(false);
+  const favoriteVehicles = useSelector(selectFavorites);
+  const dispatch = useDispatch();
+
+  const updatedVehicle = convertVehiclesData(vehicle);
   const {
-    id,
     name,
     imgVehicle,
     price,
@@ -16,7 +23,22 @@ const Vehicle = ({ vehicle }) => {
     location,
     description,
     facilities,
-  } = useMemo(() => convertVehiclesData(vehicle), [vehicle]);
+  } = updatedVehicle;
+  
+  const handleClick = useCallback(() => {
+    if (!active) {
+      dispatch(addFavorite(updatedVehicle));
+    } else {
+      dispatch(removeFavorite(updatedVehicle.id));
+    }
+    setActive(!active);
+  }, [active, dispatch, updatedVehicle]);
+
+useEffect(() => {
+  setActive(!!favoriteVehicles.find(({id}) => id === updatedVehicle.id));
+}, [favoriteVehicles, updatedVehicle.id]);
+
+
   return (
     <>
       <div className={styles.thumbVehicle}>
@@ -28,7 +50,13 @@ const Vehicle = ({ vehicle }) => {
             <h2 className={styles.titleCard}>{name}</h2>
             <div className={styles.priceSubscribe}>
               <p>{price}</p>
-              <button className={styles.subscribeBtn}>
+              <button
+                className={clsx(
+                  styles.subscribeBtn,
+                  active && styles.activeSubscribe
+                )}
+                onClick={handleClick}
+              >
                 <span className="icon-heart"></span>
               </button>
             </div>

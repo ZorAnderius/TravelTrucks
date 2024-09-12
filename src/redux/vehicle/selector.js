@@ -1,9 +1,9 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { selectFilters } from "../filters/selector";
-import { initialState } from "../filters/initialState";
-
 
 export const selectVehicles = (state) => state.vehicle.items;
+
+export const selectFavorites = state => state.vehicle.favorites;
 
 export const selectFilteredVehicles = createSelector(
   [selectVehicles, selectFilters],

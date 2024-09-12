@@ -12,6 +12,16 @@ import { FETCH_STATUS } from "../../helpers";
 const vehiclesSlice = createSlice({
   name: "vehicle",
   initialState: initialState,
+  reducers: {
+    addFavorite: (state, action) => {
+      state.favorites.push(action.payload);
+    },
+    removeFavorite: (state, action) => {
+      state.favorites = state.favorites.filter(
+        ({ id }) => id !== action.payload
+      );
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(fetchAllVehicle.fulfilled, handleAllVehicle)
@@ -29,4 +39,5 @@ const vehiclesSlice = createSlice({
       ),
 });
 
+export const { addFavorite, removeFavorite } = vehiclesSlice.actions;
 export const vehiclesReducer = vehiclesSlice.reducer;

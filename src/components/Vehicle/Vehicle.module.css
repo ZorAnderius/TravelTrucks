@@ -139,14 +139,14 @@
   border: none;
   background-color: transparent;
   color: var(--primary-color);
-  transition: color var(--transition-time) ease-in;
+  transform: scale(1);
+  transition: color, transform var(--transition-time) ease-in;
 }
 
-.subscribeBtn:is(:hover, :focus){
-    color: var(--btn-color);
+.subscribeBtn:hover{
+    transform: scale(1.1);
 }
 
 .activeSubscribe{
-  composes: subscribeBtn;
   color: var(--btn-color);
 }
