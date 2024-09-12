@@ -1,5 +1,5 @@
 import { Field, Formik, Form } from "formik";
-import { useEffect, useId } from "react";
+import React, { useEffect, useId } from "react";
 import { useDispatch } from "react-redux";
 import { changeFilters } from "../../redux/filters/slice";
 import clsx from "clsx";
@@ -11,7 +11,7 @@ import { initialValues } from "./initialValues";
 
 import styles from "./FilterList.module.css";
 
-const FilterList = () => {
+const FilterList = React.memo(() => {
   const locationId = useId();
   const dispatch = useDispatch();
 
@@ -57,6 +57,8 @@ const FilterList = () => {
       </Formik>
     </aside>
   );
-};
+});
+
+FilterList.displayName = "FilterList";
 
 export default FilterList;
