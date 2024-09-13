@@ -23,7 +23,7 @@ const Catalog = () => {
     <Loader/>
   ) : (
     <main>
-      <Section style={styles.catalog}>
+      <Section css='catalog'>
         <Container style={styles.catalogContainer}>
           <FilterList />
           <VehicleList />

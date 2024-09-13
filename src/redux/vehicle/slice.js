@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { initialState } from "./initialState";
-import { fetchAllVehicle } from "./operation";
+import { fetchAllVehicle, fetchVehicleById } from "./operation";
 import {
   handleAllVehicle,
   handleFulfilled,
   handlePending,
   handleRejected,
+  handleVehicleById,
 } from "./hendles";
 import { FETCH_STATUS } from "../../helpers";
 
@@ -25,6 +26,7 @@ const vehiclesSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(fetchAllVehicle.fulfilled, handleAllVehicle)
+      .addCase(fetchVehicleById.fulfilled, handleVehicleById)
       .addMatcher(
         (action) => action.type.endsWith(FETCH_STATUS.pending),
         handlePending

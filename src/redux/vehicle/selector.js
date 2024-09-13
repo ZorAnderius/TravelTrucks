@@ -3,6 +3,8 @@ import { selectFilters } from "../filters/selector";
 
 export const selectVehicles = (state) => state.vehicle.items;
 
+export const selectCurrentVehicle = (state) => state.vehicle.currentVehicle;
+
 export const selectFavorites = (state) => state.vehicle.favorites;
 
 export const selectLoader = (state) => state.vehicle.isLoading;

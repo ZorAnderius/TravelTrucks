@@ -1,0 +1,66 @@
+.vehicleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.vehicleInfoText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vehicleLocationReview {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.vehicleRatingContainer {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.galleryContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 48px;
+}
+
+.galleryVehicle {
+  max-width: 292px;
+  width: 100%;
+  height: 312px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gray-light-color);
+}
+
+.galleryVehicle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: rgba(206, 187, 162, 0.5);
+}
+
+.imgVehicle {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 2;
+}

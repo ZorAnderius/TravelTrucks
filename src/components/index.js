@@ -8,3 +8,5 @@ export { default as Button } from "./Button/Button";
 export { default as Loader } from "./Loader/Loader";
 export { default as VehicleDetails } from "./VehicleDetails/VehicleDetails";
 export { default as VehicleReviews } from "./VehicleReviews/VehicleReviews";
+export { default as VehicleNavigation } from "./VehicleNavigation/VehicleNavigation";
+export { default as VehicleFeature } from "./VehicleFeature/VehicleFeature";

@@ -1,0 +1,13 @@
+.section{
+    padding-top: 48px;
+}
+
+.catalog{
+    composes: section;
+    padding-bottom: 52px;
+}
+
+.details{
+    composes:section;
+    padding-bottom: 80px;
+}

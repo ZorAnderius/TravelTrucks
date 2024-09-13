@@ -7,19 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, removeFavorite } from "../../redux/vehicle/slice";
 import { useCallback, useEffect, useState } from "react";
 import { selectFavorites } from "../../redux/vehicle/selector";
+import { ROUTES_NAME } from "../../helpers";
 
 const Vehicle = ({ vehicle }) => {
   const [active, setActive] = useState(false);
   const favoriteVehicles = useSelector(selectFavorites);
   const dispatch = useDispatch();
 
-  const updatedVehicle = convertVehiclesData(vehicle);
+  const updatedVehicle = convertVehiclesData(vehicle, 'catalog');
   const {
+    id,
     name,
     imgVehicle,
     price,
     rating,
-    reviews,
+    reviewsQuantity,
     location,
     description,
     facilities,
@@ -64,9 +66,13 @@ useEffect(() => {
           <div className={styles.ratingLocationWrapper}>
             <div className={styles.ratingWrapper}>
               <span className={clsx("icon-rating", styles.rating)}></span>
-              <LinkButton styleProp={styles.reviewLink}>
+              <LinkButton
+                styleProp={styles.reviewLink}
+                link={`${ROUTES_NAME.catalog}/${updatedVehicle.id}/${ROUTES_NAME.vehicleReview}`}
+              >
                 <p>
-                  {rating}({reviews} {reviews <= 1 ? "Review" : "Reviews"})
+                  {rating}({reviewsQuantity} 
+                  {reviewsQuantity <= 1 ? "Review" : "Reviews"})
                 </p>
               </LinkButton>
             </div>
@@ -84,7 +90,9 @@ useEffect(() => {
             </li>
           ))}
         </ul>
-        <LinkButton>Show more</LinkButton>
+        <LinkButton link={`${ROUTES_NAME.catalog}/${updatedVehicle.id}`}>
+          Show more
+        </LinkButton>
       </div>
     </>
   );
