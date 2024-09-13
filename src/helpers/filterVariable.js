@@ -40,12 +40,6 @@ export const vehicleEquipment = [
     value: "bathroom",
     iconStyle: "icon-water",
   },
-  {
-    id: nanoid(),
-    title: "radio",
-    value: "radio",
-    iconStyle: "icon-list",
-  },
 ];
 
 export const vehicleType = [
@@ -66,5 +60,15 @@ export const vehicleType = [
     title: "alcove",
     value: "alcove",
     iconStyle: "icon-grid-3x3",
+  },
+];
+
+export const vehicleBadges = [
+  ...vehicleEquipment,
+  {
+    id: nanoid(),
+    title: "radio",
+    value: "radio",
+    iconStyle: "icon-list",
   },
 ];

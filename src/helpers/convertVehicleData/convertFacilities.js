@@ -1,4 +1,4 @@
-import { vehicleEngine, vehicleEquipment, vehicleTransmission } from "../filterVariable";
+import { vehicleBadges, vehicleEngine, vehicleTransmission } from "../filterVariable";
 
 export const convertFacilities = (data) => { 
     const facilitiesData = Object.entries(data).reduce(
@@ -6,7 +6,7 @@ export const convertFacilities = (data) => {
         value === true ? [...acc, { [key]: value, title: key }] : acc,
       []
     );
-    const filterFacilities = vehicleEquipment.filter((data) =>
+    const filterFacilities = vehicleBadges.filter((data) =>
       facilitiesData.find(({ title }) => title === data.title)
     );
     filterFacilities.unshift(
