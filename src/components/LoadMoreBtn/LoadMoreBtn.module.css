@@ -1,0 +1,17 @@
+.loadMore{
+  border-radius: 200px;
+  border: none;
+  padding: 16px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+  max-width: 145px;
+  width: 100%;
+  border: 1px solid var(--gray-light-color);
+  transition: border-color var(--transition-time) ease-in;
+}
+
+.loadMore:is(:hover){
+  border-color: var(--btn-hover-color);
+}

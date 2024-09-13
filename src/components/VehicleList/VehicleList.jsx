@@ -1,23 +1,29 @@
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-import {
-  selectFilteredVehicles,
-} from "../../redux/vehicle/selector";
+import { selectFilteredVehicles } from "../../redux/vehicle/selector";
 import Vehicle from "../Vehicle/Vehicle";
-import Button from "../Button/Button";
 
 import styles from "./VehicleList.module.css";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
+import { scrollToLoad } from "../../helpers";
 
 const perPage = 4;
+const marginTop = 110;
 
 const VehicleList = () => {
   const [visibleVehicle, setVisibleVehicle] = useState(perPage);
   const vehicles = useSelector(selectFilteredVehicles);
+  const loadMoreBtnRef = useRef(null);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     setVisibleVehicle((prevPage) => prevPage + perPage);
-  };
+    const scrollPosition =
+      document.documentElement.scrollTop +
+      loadMoreBtnRef.current?.getBoundingClientRect().top -
+      marginTop;
+    scrollToLoad(scrollPosition);
+  }, [loadMoreBtnRef]);
 
   useEffect(() => {
     setVisibleVehicle(perPage);
@@ -40,9 +46,9 @@ const VehicleList = () => {
       )}
 
       {visibleVehicle < vehicles?.length && (
-        <Button styleProp="loadMore" handleClick={handleClick}>
+        <LoadMoreBtn ref={loadMoreBtnRef} handleClick={handleClick}>
           LoadMore
-        </Button>
+        </LoadMoreBtn>
       )}
     </div>
   );

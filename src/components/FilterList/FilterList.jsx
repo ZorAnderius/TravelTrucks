@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 import VehicleFields from "./VehicleFields/VehicleFields";
 import Button from "../Button/Button";
-import { vehicleEquipment, vehicleType } from "../../helpers";
+import { scrollToLoad, vehicleEquipment, vehicleType } from "../../helpers";
 import { initialValues } from "./initialValues";
 
 import styles from "./FilterList.module.css";
@@ -16,8 +16,8 @@ const FilterList = React.memo(() => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values) => {
-    console.log(values);
     dispatch(changeFilters(values));
+    scrollToLoad(0);
   };
 
   useEffect(() => {
