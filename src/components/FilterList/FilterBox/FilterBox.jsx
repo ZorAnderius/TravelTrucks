@@ -1,5 +1,5 @@
 import { useField } from "formik";
-import styles from "./FilterCheckbox.module.css";
+import styles from "./FilterBox.module.css";
 import clsx from "clsx";
 
 const isRadio = (type) => type === "radio";

@@ -1,6 +1,6 @@
 import { Field } from "formik";
 import styles from "./VehicleFields.module.css";
-import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
+import FilterBox from "../FilterBox/FilterBox";
 
 const VehicleFields = ({ children, name, type, data }) => {
   return (
@@ -15,7 +15,7 @@ const VehicleFields = ({ children, name, type, data }) => {
             type={type}
             title={title}
             style={iconStyle}
-            component={FilterCheckbox}
+            component={FilterBox}
           />
         ))}
       </div>

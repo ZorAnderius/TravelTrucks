@@ -28,5 +28,10 @@
   composes: btn;
   max-width: 145px;
   width: 100%;
-  
+  border: 1px solid var(--gray-light-color);
+  transition: border-color var(--transition-time) ease-in;
+}
+
+.loadMore:is(:hover, :focus){
+  border-color: var(--btn-hover-color);
 }
