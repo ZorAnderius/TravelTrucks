@@ -1,16 +1,18 @@
 export const handlePending = (state) => {
-    state.isLoading = true;
-}
+  state.isLoading = true;
+  state.error = null;
+};
 
-export const handleFulfilled = (state) => { 
-    state.isLoading = false;
- }
+export const handleFulfilled = (state) => {
+  state.isLoading = false;
+  state.error = null;
+};
 
-export const handleRejected= (state, action) => { 
-    state.isLoading = false;
-    state.error = action.payload;
- }
+export const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 
 export const handleAllVehicle = (state, action) => {
-    state.items = action.payload;
+  state.items = action.payload;
 };

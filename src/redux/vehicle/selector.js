@@ -3,12 +3,15 @@ import { selectFilters } from "../filters/selector";
 
 export const selectVehicles = (state) => state.vehicle.items;
 
-export const selectFavorites = state => state.vehicle.favorites;
+export const selectFavorites = (state) => state.vehicle.favorites;
+
+export const selectLoader = (state) => state.vehicle.isLoading;
+
+export const selectError = (state) => state.vehicle.error;
 
 export const selectFilteredVehicles = createSelector(
   [selectVehicles, selectFilters],
-    (vehicles, filters) => {
-      console.log(filters);
+  (vehicles, filters) => {
     if (!vehicles || vehicles.length === 0) return [];
 
     return vehicles.filter((vehicle) => {
@@ -23,16 +26,13 @@ export const selectFilteredVehicles = createSelector(
         TV: filters.TV,
         bathroom: filters.bathroom,
         kitchen: filters.kitchen,
-        radio: filters.radio,
       };
 
       const equipmentFilter = Object.keys(equipment).every((key) => {
         return !equipment[key] || vehicle[key] === equipment[key];
       });
       const transmissionFilter = filters.automatic
-        ? vehicle.transmission
-            ?.toLowerCase()
-            .includes('automatic')
+        ? vehicle.transmission?.toLowerCase().includes("automatic")
         : true;
 
       const typeFilter = filters.type

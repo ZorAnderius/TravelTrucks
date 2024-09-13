@@ -5,7 +5,6 @@ import styles from "./Home.module.css";
 
 const Home = () => {
   return (
-    <>
       <Section style={styles.hero}>
         <Container>
           <div className={styles.heroContent}>
@@ -17,7 +16,6 @@ const Home = () => {
           </div>
         </Container>
       </Section>
-    </>
   );
 };
 

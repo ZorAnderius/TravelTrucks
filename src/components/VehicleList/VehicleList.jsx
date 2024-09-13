@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
-import { selectFilteredVehicles } from "../../redux/vehicle/selector";
+import {
+  selectFilteredVehicles,
+} from "../../redux/vehicle/selector";
 import Vehicle from "../Vehicle/Vehicle";
 import Button from "../Button/Button";
 
@@ -19,9 +21,8 @@ const VehicleList = () => {
 
   useEffect(() => {
     setVisibleVehicle(perPage);
-  },[vehicles])
+  }, [vehicles]);
 
-  
   return (
     <div className={styles.catalogWrapper}>
       {vehicles?.length > 0 ? (
