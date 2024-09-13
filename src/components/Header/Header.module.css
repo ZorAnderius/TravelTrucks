@@ -1,4 +1,21 @@
-.header{
-    background-color: var(--element-txt-color);
-    border-bottom: 1px solid var(--gray-100-color);
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: var(--element-txt-color);
+  border-bottom: 1px solid var(--gray-100-color);
+  box-shadow: none;
+  transition: background-color,box-shadow var(--transition-time) ease-in;
+}
+
+.fixed {
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+  background-color: var(--header-bgr-color);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--header-bgr-color);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.55);
 }

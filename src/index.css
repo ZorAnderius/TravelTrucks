@@ -1,6 +1,10 @@
 @import url('./styles/variables.css');
 @import url('./styles/fontStyle.css');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;

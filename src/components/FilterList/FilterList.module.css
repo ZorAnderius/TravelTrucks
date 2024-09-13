@@ -1,6 +1,17 @@
 .filterAside {
-  position: sticky;
-  top: 50px;
+  position: fixed;
+  top: 120px;
+  max-width: 360px;
+  width: 100%;
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+}
+
+.filterAside::-webkit-scrollbar{
+  display: none;
+}
+
+.asideContainer{
   max-width: 360px;
   width: 100%;
 }
@@ -78,4 +89,3 @@
 .submitBtn:is(:hover, :focus) {
   background-color: var(--btn-hover-color);
 }
-

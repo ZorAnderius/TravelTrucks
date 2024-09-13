@@ -1,14 +1,22 @@
+import { useRef, useState } from "react";
 import Container from "../Container/Container";
 import styles from './Header.module.css';
+import HeaderObserver from "./HeaderObserver/HeaderObserver";
 import Navigation from "./Navigation/Navigation";
+import clsx from "clsx";
 
 const Header = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const observerRef = useRef(null);
   return (
-    <header className={styles.header}>
-      <Container>
-        <Navigation />
-      </Container>
-    </header>
+    <>
+      <HeaderObserver ref={observerRef} setVisible={setIsVisible}/>
+      <header className={clsx(styles.header, !isVisible && styles.fixed)}>
+        <Container>
+          <Navigation />
+        </Container>
+      </header>
+    </>
   );
 };
 
