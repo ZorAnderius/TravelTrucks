@@ -6,3 +6,5 @@ export { default as FilterList } from "./FilterList/FilterList";
 export { default as VehicleList } from "./VehicleList/VehicleList";
 export { default as Button } from "./Button/Button";
 export { default as Loader } from "./Loader/Loader";
+export { default as VehicleDetails } from "./VehicleDetails/VehicleDetails";
+export { default as VehicleReviews } from "./VehicleReviews/VehicleReviews";

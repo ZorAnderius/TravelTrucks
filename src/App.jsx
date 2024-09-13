@@ -1,9 +1,9 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import "modern-normalize";
-import { Header } from "./components";
+import { Header, Loader } from "./components";
 import { useSelector } from "react-redux";
 import { selectError } from "./redux/vehicle/selector";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { ROUTES_NAME } from "./helpers";
 
 import styles from "./App.module.css";
@@ -19,8 +19,10 @@ const App = () => {
   }, [error, navigate]);
   return (
     <div className={styles.wrapper}>
-       <Header />
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Header />
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
