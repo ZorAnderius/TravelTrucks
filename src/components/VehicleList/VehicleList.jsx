@@ -17,11 +17,15 @@ const VehicleList = () => {
   const vehicles = useSelector(selectFilteredVehicles);
   const dispatch = useDispatch();
   const loadMoreBtnRef = useRef(null);
-  const [hasNotified, setHasNotified] = useState(false);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    console.log(hasNotified);
-    if (vehicles.length > 0 && prevVehicleCount === 0 && !hasNotified) {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (vehicles.length > 0 && vehicles.length !== prevVehicleCount) {
       dispatch(
         notify({
           toastType: 'success',
@@ -29,11 +33,8 @@ const VehicleList = () => {
         })
       );
       setPrevVehicleCount(vehicles.length);
-      setHasNotified(true);
     }
-  }, [dispatch, vehicles, prevVehicleCount, hasNotified]);
-
-
+  }, [dispatch, vehicles, prevVehicleCount]);
 
   const handleClick = useCallback(() => {
     setVisibleVehicle(prevPage => prevPage + perPage);
