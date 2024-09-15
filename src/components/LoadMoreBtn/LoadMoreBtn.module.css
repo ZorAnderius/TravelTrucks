@@ -9,7 +9,7 @@
   max-width: 145px;
   width: 100%;
   border: 1px solid var(--gray-light-color);
-  transition: border-color var(--transition-time) ease-in;
+  transition: border-color var(--transition-time);
 }
 
 .loadMore:is(:hover){

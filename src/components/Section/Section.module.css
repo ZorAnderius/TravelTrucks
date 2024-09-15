@@ -1,13 +1,17 @@
-.section{
-    padding-top: 48px;
+.section {
+  padding-top: 48px;
 }
 
-.catalog{
-    composes: section;
-    padding-bottom: 52px;
+.catalog {
+  composes: section;
+  padding-bottom: 52px;
 }
 
-.details{
-    composes:section;
-    padding-bottom: 80px;
+.details {
+  composes: section;
+}
+
+.detailsInfo {
+  padding-top: 60px;
+  padding-bottom: 80px;
 }

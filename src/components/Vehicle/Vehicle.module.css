@@ -140,7 +140,7 @@
   background-color: transparent;
   color: var(--primary-color);
   transform: scale(1);
-  transition: color, transform var(--transition-time) ease-in;
+  transition: color, transform var(--transition-time);
 }
 
 .subscribeBtn:hover{

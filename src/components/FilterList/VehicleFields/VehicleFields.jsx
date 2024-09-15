@@ -1,11 +1,12 @@
 import { Field } from "formik";
 import styles from "./VehicleFields.module.css";
 import FilterBox from "../FilterBox/FilterBox";
+import Title from "../../Title/Title";
 
 const VehicleFields = ({ children, name, type, data }) => {
   return (
     <div className={styles.filterFieldContainer}>
-      <h2 className={styles.filterTitle}>{children}</h2>
+      <Title>{children}</Title>
       <div className={styles.vehicleContainer}>
         {data?.map(({ id, title, value, iconStyle }) => (
           <Field

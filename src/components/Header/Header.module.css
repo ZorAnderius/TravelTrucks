@@ -7,7 +7,7 @@
   background-color: var(--element-txt-color);
   border-bottom: 1px solid var(--gray-100-color);
   box-shadow: none;
-  transition: background-color,box-shadow var(--transition-time) ease-in;
+  transition: background-color var(--transition-time-tab),box-shadow var(--transition-time-tab);
 }
 
 .fixed {

@@ -10,7 +10,7 @@
   border-radius: 12px;
   box-shadow: transparent;
   border: 1px solid var(--gray-light-color);
-  transition: border, box-shadow var(--transition-time) ease-in;
+  transition: border var(--transition-time), box-shadow var(--transition-time);
   mix-blend-mode: multiply;
 }
 
