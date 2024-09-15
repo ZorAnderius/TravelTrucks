@@ -31,7 +31,7 @@
 
 2. **Navigate to the Project Directory:**
    ```bash
-   cd react_travel_trucks
+   cd TravelTrucks
 
 
 3. **Install Dependencies:**
