@@ -8,7 +8,6 @@
   letter-spacing: -0.08px;
 }
 
-
 .submitBtn {
   composes: btn;
   background: var(--btn-color);
@@ -23,7 +22,7 @@
   background-color: var(--btn-hover-color);
 }
 
-.loadMore{
+.loadMore {
   composes: btn;
   max-width: 145px;
   width: 100%;
@@ -31,12 +30,11 @@
   transition: border-color var(--transition-time);
 }
 
-.loadMore:is(:hover, :focus){
+.loadMore:is(:hover, :focus) {
   border-color: var(--btn-hover-color);
 }
 
-
-.toast{
+.toast {
   position: absolute;
   top: 2px;
   right: 0;
@@ -48,6 +46,18 @@
   border: none;
 }
 
-.toast:is(:hover, :focus){
+.toast:is(:hover, :focus) {
   color: var(--btn-hover-color);
+}
+
+.reset {
+  composes: btn;
+  max-width: 166px;
+  width: 100%;
+  padding: 16px;
+  transition: background-color var(--transition-time);
+}
+
+.reset:is(:hover, :focus) {
+  background-color: var(--gray-light-color);
 }

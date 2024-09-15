@@ -8,6 +8,7 @@ import { addFavorite, removeFavorite } from "../../redux/vehicle/slice";
 import { useCallback, useEffect, useState } from "react";
 import { selectFavorites } from "../../redux/vehicle/selector";
 import { ROUTES_NAME } from "../../helpers";
+import { notify } from "../../redux/notification/slice";
 
 const Vehicle = ({ vehicle }) => {
   const [active, setActive] = useState(false);
@@ -29,8 +30,10 @@ const Vehicle = ({ vehicle }) => {
   const handleClick = useCallback(() => {
     if (!active) {
       dispatch(addFavorite(updatedVehicle));
+      dispatch(notify({ toastType: "info", message: "Added to favorites" }));
     } else {
       dispatch(removeFavorite(updatedVehicle.id));
+      dispatch(notify({ toastType: "info", message: "Remove to favorites" }));
     }
     setActive(!active);
   }, [active, dispatch, updatedVehicle]);

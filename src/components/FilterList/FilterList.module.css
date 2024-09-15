@@ -91,3 +91,9 @@
 .submitBtn:is(:hover, :focus) {
   background-color: var(--btn-hover-color);
 }
+
+.btnGroup{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

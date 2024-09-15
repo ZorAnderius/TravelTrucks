@@ -1,5 +1,5 @@
 export const optionToast = Object.freeze( {
-  duration: 50000,
+  duration: 3000,
   position: "top-right",
   icon: "",
   style: {

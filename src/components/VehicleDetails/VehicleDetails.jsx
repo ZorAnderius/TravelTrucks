@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
+import clsx from "clsx";
 import { selectCurrentVehicle } from "../../redux/vehicle/selector";
 import { convertVehiclesData, ROUTES_NAME } from "../../helpers";
-import styles from "./VehicleDetails.module.css";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
 import LinkButton from "../LinkButton/LinkButton";
+import styles from "./VehicleDetails.module.css";
 
 const VehicleDetails = () => {
   const vehicle = useSelector(selectCurrentVehicle);
