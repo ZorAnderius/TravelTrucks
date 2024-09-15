@@ -1,4 +1,4 @@
-.loadMore{
+.loadMore {
   border-radius: 200px;
   border: none;
   padding: 16px;
@@ -12,6 +12,6 @@
   transition: border-color var(--transition-time);
 }
 
-.loadMore:is(:hover){
+.loadMore:is(:hover) {
   border-color: var(--btn-hover-color);
 }

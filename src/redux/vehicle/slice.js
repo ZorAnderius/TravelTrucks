@@ -1,17 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { initialState } from "./initialState";
-import { fetchAllVehicle, fetchVehicleById } from "./operation";
+import { createSlice } from '@reduxjs/toolkit';
+import { initialState } from './initialState';
+import { fetchAllVehicle, fetchVehicleById } from './operation';
 import {
   handleAllVehicle,
   handleFulfilled,
   handlePending,
   handleRejected,
   handleVehicleById,
-} from "./hendles";
-import { FETCH_STATUS } from "../../helpers";
+} from './hendles';
+import { FETCH_STATUS } from '../../helpers';
 
 const vehiclesSlice = createSlice({
-  name: "vehicle",
+  name: 'vehicle',
   initialState: initialState,
   reducers: {
     addFavorite: (state, action) => {
@@ -23,20 +23,20 @@ const vehiclesSlice = createSlice({
       );
     },
   },
-  extraReducers: (builder) =>
+  extraReducers: builder =>
     builder
       .addCase(fetchAllVehicle.fulfilled, handleAllVehicle)
       .addCase(fetchVehicleById.fulfilled, handleVehicleById)
       .addMatcher(
-        (action) => action.type.endsWith(FETCH_STATUS.pending),
+        action => action.type.endsWith(FETCH_STATUS.pending),
         handlePending
       )
       .addMatcher(
-        (action) => action.type.endsWith(FETCH_STATUS.fulfilled),
+        action => action.type.endsWith(FETCH_STATUS.fulfilled),
         handleFulfilled
       )
       .addMatcher(
-        (action) => action.type.endsWith(FETCH_STATUS.rejected),
+        action => action.type.endsWith(FETCH_STATUS.rejected),
         handleRejected
       ),
 });

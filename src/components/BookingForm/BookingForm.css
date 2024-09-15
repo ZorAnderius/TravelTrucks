@@ -3,7 +3,7 @@
   border: 1px solid var(--main-txt-color);
   width: 276px;
   height: 284px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   border-radius: 12px;
   margin: 0;
   padding: 0;
@@ -80,7 +80,7 @@ h2.react-datepicker__current-month {
 }
 
 .react-datepicker__day:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 25%;
   left: 50%;
@@ -91,11 +91,11 @@ h2.react-datepicker__current-month {
 
 .react-datepicker__day:hover,
 .react-datepicker__day:active {
-    color: var(--element-txt-color);
-    background: transparent;
+  color: var(--element-txt-color);
+  background: transparent;
 
-    &:after {
-    content: "";
+  &:after {
+    content: '';
     position: absolute;
     top: 25%;
     left: 50%;
@@ -128,7 +128,7 @@ h2.react-datepicker__current-month {
 }
 
 .react-datepicker__day--selected::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 25%;
   left: 50%;
@@ -151,7 +151,7 @@ h2.react-datepicker__current-month {
 
 .react-datepicker__day--today::after,
 .react-datepicker__day--keyboard-selected::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 25%;
   left: 50%;

@@ -1,3 +1,3 @@
 export const initialState = {
-  notification: { message: "", toastType: "" },
+  notification: { message: '', toastType: '' },
 };

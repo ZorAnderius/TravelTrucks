@@ -1,14 +1,14 @@
-.ratingList{
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
+.ratingList {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
 }
 
-.star{
-    font-size: 16px;
-    color: var(--gray-100-color);
+.star {
+  font-size: 16px;
+  color: var(--gray-100-color);
 }
 
-.active{
-    color: var(--rating-color);
+.active {
+  color: var(--rating-color);
 }

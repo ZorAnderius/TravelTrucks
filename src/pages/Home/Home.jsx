@@ -1,8 +1,7 @@
-import React from "react";
-import { Container, LinkButton, Section } from "../../components";
-import { ROUTES_NAME } from "../../helpers/constants/routesVariable";
-
-import styles from "./Home.module.css";
+import React from 'react';
+import { Container, LinkButton, Section } from '../../components';
+import { ROUTES_NAME } from '../../helpers/constants/routesVariable';
+import styles from './Home.module.css';
 
 const Home = React.memo(() => {
   return (
@@ -14,7 +13,9 @@ const Home = React.memo(() => {
             <p className={styles.heroSubtitle}>
               You can find everything you want in our catalog
             </p>
-            <LinkButton type='btn' link={ROUTES_NAME.catalog}>View Now</LinkButton>
+            <LinkButton type="btn" link={ROUTES_NAME.catalog}>
+              View Now
+            </LinkButton>
           </div>
         </Container>
       </Section>
@@ -22,6 +23,6 @@ const Home = React.memo(() => {
   );
 });
 
-Home.displayName = "Home";
+Home.displayName = 'Home';
 
 export default Home;

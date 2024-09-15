@@ -1,8 +1,8 @@
-import { useField } from "formik";
-import styles from "./FilterBox.module.css";
-import clsx from "clsx";
+import { useField } from 'formik';
+import clsx from 'clsx';
+import styles from './FilterBox.module.css';
 
-const isRadio = (type) => type === "radio";
+const isRadio = type => type === 'radio';
 
 const FilterCheckbox = ({ title, style, field, type }) => {
   const { name, value, checked } = field;

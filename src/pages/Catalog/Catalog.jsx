@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import {
   Container,
   FilterList,
   Loader,
   Section,
   VehicleList,
-} from "../../components";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAllVehicle } from "../../redux/vehicle/operation";
-import { selectLoader } from "../../redux/vehicle/selector";
-import styles from "./Catalog.module.css";
+} from '../../components';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllVehicle } from '../../redux/vehicle/operation';
+import { selectLoader } from '../../redux/vehicle/selector';
+import styles from './Catalog.module.css';
 
 const Catalog = React.memo(() => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Catalog = React.memo(() => {
     <Loader />
   ) : (
     <main>
-      <Section css='catalog'>
+      <Section css="catalog">
         <Container style={styles.catalogContainer}>
           <FilterList />
           <VehicleList />
@@ -33,6 +33,6 @@ const Catalog = React.memo(() => {
   );
 });
 
-Catalog.displayName = "Catalog";
+Catalog.displayName = 'Catalog';
 
 export default Catalog;

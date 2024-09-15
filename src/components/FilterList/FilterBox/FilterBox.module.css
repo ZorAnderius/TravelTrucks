@@ -24,13 +24,13 @@
   text-transform: capitalize;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.5; 
+  line-height: 1.5;
   letter-spacing: -0.08px;
 }
 
-.active{
+.active {
   border: 1px solid var(--btn-color);
-  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.75);
 }

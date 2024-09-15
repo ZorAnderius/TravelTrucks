@@ -1,22 +1,22 @@
-import { createSelector } from "@reduxjs/toolkit";
-import { selectFilters } from "../filters/selector";
+import { createSelector } from '@reduxjs/toolkit';
+import { selectFilters } from '../filters/selector';
 
-export const selectVehicles = (state) => state.vehicle.items;
+export const selectVehicles = state => state.vehicle.items;
 
-export const selectCurrentVehicle = (state) => state.vehicle.currentVehicle;
+export const selectCurrentVehicle = state => state.vehicle.currentVehicle;
 
-export const selectFavorites = (state) => state.vehicle.favorites;
+export const selectFavorites = state => state.vehicle.favorites;
 
-export const selectLoader = (state) => state.vehicle.isLoading;
+export const selectLoader = state => state.vehicle.isLoading;
 
-export const selectError = (state) => state.vehicle.error;
+export const selectError = state => state.vehicle.error;
 
 export const selectFilteredVehicles = createSelector(
   [selectVehicles, selectFilters],
   (vehicles, filters) => {
     if (!vehicles || vehicles.length === 0) return [];
 
-    return vehicles.filter((vehicle) => {
+    return vehicles.filter(vehicle => {
       const locationFilter = filters.location
         ? vehicle.location
             ?.toLowerCase()
@@ -30,11 +30,11 @@ export const selectFilteredVehicles = createSelector(
         kitchen: filters.kitchen,
       };
 
-      const equipmentFilter = Object.keys(equipment).every((key) => {
+      const equipmentFilter = Object.keys(equipment).every(key => {
         return !equipment[key] || vehicle[key] === equipment[key];
       });
       const transmissionFilter = filters.automatic
-        ? vehicle.transmission?.toLowerCase().includes("automatic")
+        ? vehicle.transmission?.toLowerCase().includes('automatic')
         : true;
 
       const typeFilter = filters.type

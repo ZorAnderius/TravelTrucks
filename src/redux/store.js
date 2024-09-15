@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
+import { configureStore } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
 import {
   persistReducer,
   FLUSH,
@@ -9,15 +9,15 @@ import {
   PURGE,
   REGISTER,
   persistStore,
-} from "redux-persist";
-import { vehiclesReducer } from "./vehicle/slice";
-import { filtersReducer } from "./filters/slice";
-import { notificationReducer } from "./notification/slice";
+} from 'redux-persist';
+import { vehiclesReducer } from './vehicle/slice';
+import { filtersReducer } from './filters/slice';
+import { notificationReducer } from './notification/slice';
 
 const persistConfig = {
-  key: "favorites",
+  key: 'favorites',
   storage,
-  whitelist: ["favorites"],
+  whitelist: ['favorites'],
 };
 
 export const store = configureStore({
@@ -26,7 +26,7 @@ export const store = configureStore({
     filters: filtersReducer,
     notify: notificationReducer,
   },
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [
@@ -36,9 +36,9 @@ export const store = configureStore({
           PERSIST,
           PURGE,
           REGISTER,
-          "notification/notify",
+          'notification/notify',
         ],
-        ignoredPaths: ["notification.message"],
+        ignoredPaths: ['notification.message'],
       },
     }),
 });

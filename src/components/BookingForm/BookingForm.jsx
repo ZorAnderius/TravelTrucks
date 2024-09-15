@@ -1,45 +1,46 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import * as Yup from "yup";
-import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
-import DatePicker from "react-datepicker";
-import { InputTextarea } from "primereact/inputtextarea";
-import { enUS } from "date-fns/locale";
-import Button from "../Button/Button";
-import styles from "./BookingForm.module.css";
-import "./BookingForm.css";
-import { useDispatch } from "react-redux";
-import { notify } from "../../redux/notification/slice";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
+import { InputTextarea } from 'primereact/inputtextarea';
+import { enUS } from 'date-fns/locale';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
+import Button from '../Button/Button';
+import './BookingForm.css';
+import { notify } from '../../redux/notification/slice';
+import styles from './BookingForm.module.css';
 
 const locale = {
   ...enUS,
   localize: {
     ...enUS.localize,
-    day: (n) => {
-      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    day: n => {
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       return days[n];
     },
   },
 };
 
 const initialValues = {
-  name: "",
-  email: "",
-  dataBooking: "",
-  textarea: "",
+  name: '',
+  email: '',
+  dataBooking: '',
+  textarea: '',
 };
 
 const bookingSchema = Yup.object({
   name: Yup.string()
     .trim()
-    .min(3, "Your name is too short")
-    .max(50, "Your name is too long")
-    .required("Name is required"),
+    .min(3, 'Your name is too short')
+    .max(50, 'Your name is too long')
+    .required('Name is required'),
   email: Yup.string()
     .trim()
-    .email("Invalid email")
-    .required("Email is required"),
-  dataBooking: Yup.date().required("Date is required"),
+    .email('Invalid email')
+    .required('Email is required'),
+  dataBooking: Yup.date().required('Date is required'),
 });
 
 const BookingForm = () => {
@@ -47,19 +48,18 @@ const BookingForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = ({ name, email, dataBooking }, action) => {
-    const nameCondition = name && name.trim() !== "";
-    const emailCondition = email && email.trim() !== "";
+    const nameCondition = name && name.trim() !== '';
+    const emailCondition = email && email.trim() !== '';
     const dataBookingCondition = dataBooking;
 
     if (nameCondition && emailCondition && dataBookingCondition) {
       dispatch(
         notify({
           message: `Thank you ${name}! You journey will begin soon.`,
-          toastType: "success",
+          toastType: 'success',
         })
       );
     }
-
     action.resetForm();
   };
 
@@ -113,9 +113,9 @@ const BookingForm = () => {
                     minDate={new Date()}
                     locale={locale}
                     placeholderText="Booking date*"
-                    onChange={(date) => {
+                    onChange={date => {
                       setStartDate(date);
-                      setFieldValue("dataBooking", date);
+                      setFieldValue('dataBooking', date);
                     }}
                     className={styles.fieldInput}
                   />
@@ -135,7 +135,7 @@ const BookingForm = () => {
                   autoResize={true}
                   rows={3}
                   value={field.value}
-                  onChange={(e) => setFieldValue(field.name, e.target.value)}
+                  onChange={e => setFieldValue(field.name, e.target.value)}
                 />
               )}
             </Field>

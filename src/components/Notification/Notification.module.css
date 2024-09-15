@@ -1,47 +1,47 @@
-.notification{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    padding: 10px 20px;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 600;
-    color: var(--primary-color);
-    border-radius: 8px;
-    position: relative;
+.notification {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--primary-color);
+  border-radius: 8px;
+  position: relative;
 }
 
-.notification-success{
-    background: rgb(174, 228, 91);
+.notification-success {
+  background: rgb(174, 228, 91);
 }
 
-.notification-error{
-    background: rgb(229, 70, 70);
+.notification-error {
+  background: rgb(229, 70, 70);
 }
 
-.notification-info{
-    background: rgb(219, 221, 71);
+.notification-info {
+  background: rgb(219, 221, 71);
 }
 
-.icon{
-    width: 50px;
-    height: 50px;
-    flex-shrink: 0;
+.icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
 }
 
-.success{
-    composes: icon;
-    color: rgb(255, 255, 255);
+.success {
+  composes: icon;
+  color: rgb(255, 255, 255);
 }
 
-.error{
-    composes: icon;
-    color: rgb(233, 255, 32);
+.error {
+  composes: icon;
+  color: rgb(233, 255, 32);
 }
 
-.info{
-    composes: icon;
-    color: blue;
+.info {
+  composes: icon;
+  color: blue;
 }

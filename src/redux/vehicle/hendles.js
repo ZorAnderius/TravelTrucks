@@ -1,9 +1,9 @@
-export const handlePending = (state) => {
+export const handlePending = state => {
   state.isLoading = true;
   state.error = null;
 };
 
-export const handleFulfilled = (state) => {
+export const handleFulfilled = state => {
   state.isLoading = false;
   state.error = null;
 };

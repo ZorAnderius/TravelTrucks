@@ -9,4 +9,4 @@ const LinkButton = ({ type, link, children }) => {
   );
 };
 
-export default LinkButton
+export default LinkButton;

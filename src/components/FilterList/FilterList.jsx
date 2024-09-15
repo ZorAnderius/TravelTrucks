@@ -1,22 +1,22 @@
-import { Field, Formik, Form} from "formik";
-import { memo, useId } from "react";
-import { useDispatch } from "react-redux";
-import { changeFilters, resetFilters } from "../../redux/filters/slice";
-import clsx from "clsx";
+import { Field, Formik, Form } from 'formik';
+import { memo, useId } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeFilters, resetFilters } from '../../redux/filters/slice';
+import clsx from 'clsx';
 
-import VehicleFields from "./VehicleFields/VehicleFields";
-import Button from "../Button/Button";
-import { scrollToLoad, vehicleEquipment, vehicleType } from "../../helpers";
-import { initialValues } from "./initialValues";
+import VehicleFields from './VehicleFields/VehicleFields';
+import Button from '../Button/Button';
+import { scrollToLoad, vehicleEquipment, vehicleType } from '../../helpers';
+import { initialValues } from './initialValues';
+import { isExistFilterValues } from '../../helpers/isExistFilterValue';
 
-import styles from "./FilterList.module.css";
-import { isExistFilterValues } from "../../helpers/isExistFilterValue";
+import styles from './FilterList.module.css';
 
 const FilterList = memo(() => {
   const locationId = useId();
   const dispatch = useDispatch();
 
-  const handleSubmit = (values) => {
+  const handleSubmit = values => {
     dispatch(changeFilters({ ...values, location: values.location.trim() }));
     scrollToLoad(0);
   };
@@ -39,7 +39,7 @@ const FilterList = memo(() => {
                     name="location"
                     placeholder="City"
                   />
-                  <span className={clsx("icon-map", styles.iconsMap)}></span>
+                  <span className={clsx('icon-map', styles.iconsMap)}></span>
                 </div>
                 <div className={styles.filterListContainer}>
                   <h2 className={styles.mainTitle}>Filters</h2>
@@ -78,6 +78,6 @@ const FilterList = memo(() => {
   );
 });
 
-FilterList.displayName = "FilterList";
+FilterList.displayName = 'FilterList';
 
 export default FilterList;

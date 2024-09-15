@@ -19,7 +19,7 @@
 }
 
 .navLink::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -28px;
   left: 0;
@@ -32,12 +32,12 @@
 }
 
 .activeLink::after {
-  content: "";
+  content: '';
 }
 
 .navLink:hover::after,
 .activeLink::after {
-  content: "";
+  content: '';
   z-index: 2;
   width: 100%;
 }

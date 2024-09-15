@@ -98,7 +98,7 @@
   overflow-y: scroll;
 }
 
-.facilitiesContainer::-webkit-scrollbar{
+.facilitiesContainer::-webkit-scrollbar {
   display: none;
 }
 
@@ -130,7 +130,7 @@
   text-underline-offset: 3px;
 }
 
-.subscribeBtn{
+.subscribeBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,10 +143,10 @@
   transition: color, transform var(--transition-time);
 }
 
-.subscribeBtn:hover{
-    transform: scale(1.1);
+.subscribeBtn:hover {
+  transform: scale(1.1);
 }
 
-.activeSubscribe{
+.activeSubscribe {
   color: var(--btn-color);
 }

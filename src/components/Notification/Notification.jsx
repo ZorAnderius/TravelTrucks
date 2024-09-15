@@ -1,11 +1,11 @@
-import { GiPodiumWinner } from "react-icons/gi";
-import { FaPersonFallingBurst } from "react-icons/fa6";
-import { HiInformationCircle } from "react-icons/hi";
-import { IoClose } from "react-icons/io5";
-import styles from "./Notification.module.css";
-import clsx from "clsx";
-import Button from "../Button/Button";
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
+import clsx from 'clsx';
+import { GiPodiumWinner } from 'react-icons/gi';
+import { FaPersonFallingBurst } from 'react-icons/fa6';
+import { HiInformationCircle } from 'react-icons/hi';
+import { IoClose } from 'react-icons/io5';
+import Button from '../Button/Button';
+import styles from './Notification.module.css';
 
 const iconMap = {
   success: GiPodiumWinner,

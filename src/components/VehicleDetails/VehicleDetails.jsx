@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
-import clsx from "clsx";
-import { selectCurrentVehicle } from "../../redux/vehicle/selector";
-import { convertVehiclesData, ROUTES_NAME } from "../../helpers";
-import LinkButton from "../LinkButton/LinkButton";
-import styles from "./VehicleDetails.module.css";
+import { useSelector } from 'react-redux';
+import clsx from 'clsx';
+import { selectCurrentVehicle } from '../../redux/vehicle/selector';
+import { convertVehiclesData, ROUTES_NAME } from '../../helpers';
+import LinkButton from '../LinkButton/LinkButton';
+import styles from './VehicleDetails.module.css';
 
 const VehicleDetails = () => {
   const vehicle = useSelector(selectCurrentVehicle);
@@ -22,12 +22,10 @@ const VehicleDetails = () => {
         <h2 className={styles.titleVehicle}>{name}</h2>
         <div className={styles.vehicleLocationReview}>
           <div className={styles.vehicleRatingContainer}>
-            <span className={clsx("icon-rating", styles.rating)}></span>
-            <LinkButton
-              type='review'
-              link={ROUTES_NAME.vehicleReview} >
-              {rating}({reviewsQuantity}{" "}
-              {reviewsQuantity <= 1 ? "Review" : "Reviews"})
+            <span className={clsx('icon-rating', styles.rating)}></span>
+            <LinkButton type="review" link={ROUTES_NAME.vehicleReview}>
+              {rating}({reviewsQuantity}{' '}
+              {reviewsQuantity <= 1 ? 'Review' : 'Reviews'})
             </LinkButton>
           </div>
           <div className={styles.locationWrapper}>

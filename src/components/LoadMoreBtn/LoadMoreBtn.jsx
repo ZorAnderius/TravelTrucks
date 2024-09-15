@@ -14,4 +14,4 @@ const LoadMoreBtn = forwardRef(({ type, handleClick, children }, ref) => (
 
 LoadMoreBtn.displayName = 'LoadMoreBtn';
 
-    export default LoadMoreBtn;
+export default LoadMoreBtn;

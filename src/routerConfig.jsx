@@ -1,15 +1,20 @@
-import { createBrowserRouter } from "react-router-dom";
-import React from "react";
-import { ROUTES_NAME } from "./helpers";
-import App from "./App";
+import { createBrowserRouter } from 'react-router-dom';
+import React from 'react';
+import { ROUTES_NAME } from './helpers';
+import App from './App';
 
-const Home = React.lazy(() => import("./pages/Home/Home"));
-const Catalog = React.lazy(() => import("./pages/Catalog/Catalog"));
-const CatalogDetails = React.lazy(() => import("./pages/CatalogDetails/CatalogDetails"));
-const VehicleFeature = React.lazy(() => import("./components/VehicleFeature/VehicleFeature"));
-const VehicleReviews = React.lazy(() => import("./components/VehicleReviews/VehicleReviews"));
-const NotFound = React.lazy(() => import("./pages/NotFound/NotFound"));
-
+const Home = React.lazy(() => import('./pages/Home/Home'));
+const Catalog = React.lazy(() => import('./pages/Catalog/Catalog'));
+const CatalogDetails = React.lazy(() =>
+  import('./pages/CatalogDetails/CatalogDetails')
+);
+const VehicleFeature = React.lazy(() =>
+  import('./components/VehicleFeature/VehicleFeature')
+);
+const VehicleReviews = React.lazy(() =>
+  import('./components/VehicleReviews/VehicleReviews')
+);
+const NotFound = React.lazy(() => import('./pages/NotFound/NotFound'));
 
 export const router = createBrowserRouter([
   {
@@ -39,7 +44,7 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: "*",
+        path: '*',
         element: <NotFound />,
       },
     ],

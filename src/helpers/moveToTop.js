@@ -1,8 +1,8 @@
-export const scrollToLoad = (axiosY) => {
+export const scrollToLoad = axiosY => {
   setTimeout(() => {
     window.scrollTo({
       top: axiosY,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }, 0);
 };

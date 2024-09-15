@@ -1,6 +1,5 @@
-.detailsForm{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-
+.detailsForm {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 }

@@ -1,6 +1,6 @@
 export const initialValues = Object.freeze({
-  location: "",
-  type: "",
+  location: '',
+  type: '',
   kitchen: false,
   bathroom: false,
   radio: false,

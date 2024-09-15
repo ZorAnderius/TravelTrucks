@@ -1,6 +1,6 @@
 export const initialState = {
-  location: "",
-  type: "",
+  location: '',
+  type: '',
   kitchen: false,
   bathroom: false,
   TV: false,

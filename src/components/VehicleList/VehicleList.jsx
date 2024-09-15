@@ -1,13 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { selectFilteredVehicles } from "../../redux/vehicle/selector";
-import Vehicle from "../Vehicle/Vehicle";
-
-import styles from "./VehicleList.module.css";
-import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import { scrollToLoad } from "../../helpers";
-import { notify } from "../../redux/notification/slice";
+import { selectFilteredVehicles } from '../../redux/vehicle/selector';
+import Vehicle from '../Vehicle/Vehicle';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import { scrollToLoad } from '../../helpers';
+import { notify } from '../../redux/notification/slice';
+import styles from './VehicleList.module.css';
 
 const perPage = 4;
 const marginTop = 110;
@@ -18,21 +17,26 @@ const VehicleList = () => {
   const vehicles = useSelector(selectFilteredVehicles);
   const dispatch = useDispatch();
   const loadMoreBtnRef = useRef(null);
+  const [hasNotified, setHasNotified] = useState(false);
 
   useEffect(() => {
-    if (vehicles.length > 0 && vehicles.length !== prevVehicleCount) {
+    console.log(hasNotified);
+    if (vehicles.length > 0 && prevVehicleCount === 0 && !hasNotified) {
       dispatch(
         notify({
-          toastType: "success",
+          toastType: 'success',
           message: `We found ${vehicles.length} vehicles`,
         })
       );
       setPrevVehicleCount(vehicles.length);
+      setHasNotified(true);
     }
-  }, [dispatch, vehicles, prevVehicleCount]);
+  }, [dispatch, vehicles, prevVehicleCount, hasNotified]);
+
+
 
   const handleClick = useCallback(() => {
-    setVisibleVehicle((prevPage) => prevPage + perPage);
+    setVisibleVehicle(prevPage => prevPage + perPage);
     const scrollPosition =
       document.documentElement.scrollTop +
       loadMoreBtnRef.current?.getBoundingClientRect().top -
@@ -48,7 +52,7 @@ const VehicleList = () => {
     <div className={styles.catalogWrapper}>
       {vehicles?.length > 0 ? (
         <ul className={styles.vehicleContainer}>
-          {vehicles?.slice(0, visibleVehicle).map((vehicle) => (
+          {vehicles?.slice(0, visibleVehicle).map(vehicle => (
             <li key={vehicle.id} className={styles.vehicleCard}>
               <Vehicle vehicle={vehicle} />
             </li>

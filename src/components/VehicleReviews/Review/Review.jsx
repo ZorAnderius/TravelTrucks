@@ -1,5 +1,5 @@
-import Rating from "../Rating/Rating";
-import styles from "./Review.module.css";
+import Rating from '../Rating/Rating';
+import styles from './Review.module.css';
 
 const Review = ({ reviewer_name, reviewer_rating, comment }) => {
   return (

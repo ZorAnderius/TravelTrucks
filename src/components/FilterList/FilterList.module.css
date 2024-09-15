@@ -92,7 +92,7 @@
   background-color: var(--btn-hover-color);
 }
 
-.btnGroup{
+.btnGroup {
   display: flex;
   flex-direction: row;
   gap: 10px;

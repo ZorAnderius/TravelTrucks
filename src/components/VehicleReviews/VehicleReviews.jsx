@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import styles from "./VehicleReviews.module.css";
-import { selectCurrentVehicle } from "../../redux/vehicle/selector";
-import Review from "./Review/Review";
+import { useSelector } from 'react-redux';
+import { selectCurrentVehicle } from '../../redux/vehicle/selector';
+import Review from './Review/Review';
+import styles from './VehicleReviews.module.css';
 
 const VehicleReviews = () => {
   const vehicle = useSelector(selectCurrentVehicle);
