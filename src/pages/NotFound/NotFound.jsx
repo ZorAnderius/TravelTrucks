@@ -2,8 +2,9 @@ import { Container, LinkButton, Section } from "../../components";
 import { ROUTES_NAME } from "../../helpers";
 import something_wrong from '../../assets/something_wrong.gif';
 import styles from './NotFound.module.css';
+import React from "react";
 
-const NotFound = () => {
+const NotFound = React.memo(() => {
   return (
     <Section>
       <Container>
@@ -15,6 +16,8 @@ const NotFound = () => {
       </Container>
     </Section>
   );
-};
+});
+
+NotFound.displayName = "NotFound";
 
 export default NotFound;

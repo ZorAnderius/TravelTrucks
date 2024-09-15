@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
@@ -7,7 +7,9 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { enUS } from "date-fns/locale";
 import Button from "../Button/Button";
 import styles from "./BookingForm.module.css";
-import './BookingForm.css';
+import "./BookingForm.css";
+import { useDispatch } from "react-redux";
+import { notify } from "../../redux/notification/slice";
 
 const locale = {
   ...enUS,
@@ -42,8 +44,23 @@ const bookingSchema = Yup.object({
 
 const BookingForm = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const handleSubmit = (prop) => {
-    console.log(prop);
+  const dispatch = useDispatch();
+
+  const handleSubmit = ({ name, email, dataBooking }, action) => {
+    const nameCondition = name && name.trim() !== "";
+    const emailCondition = email && email.trim() !== "";
+    const dataBookingCondition = dataBooking;
+
+    if (nameCondition && emailCondition && dataBookingCondition) {
+      dispatch(
+        notify({
+          message: `Thank you ${name}! You journey will begin soon.`,
+          toastType: "success",
+        })
+      );
+    }
+
+    action.resetForm();
   };
 
   return (
@@ -61,34 +78,55 @@ const BookingForm = () => {
       >
         {({ setFieldValue }) => (
           <Form className={styles.form}>
-            <Field
-              type="text"
-              name="name"
-              className={styles.fieldInput}
-              placeholder="Name*"
-            />
-            <Field
-              type="email"
-              name="email"
-              className={styles.fieldInput}
-              placeholder="Email*"
-            />
-            <Field name="dataBooking">
-              {({ field }) => (
-                <DatePicker
-                  {...field}
-                  selected={startDate}
-                  minDate={new Date()}
-                  locale={locale}
-                  placeholderText="Booking date*"
-                  onChange={(date) => {
-                    setStartDate(date);
-                    setFieldValue("dataBooking", date);
-                  }}
-                  className={styles.fieldInput}
-                />
-              )}
-            </Field>
+            <div className={styles.inputWrap}>
+              <Field
+                type="text"
+                name="name"
+                className={styles.fieldInput}
+                placeholder="Name*"
+              />
+              <ErrorMessage
+                className={styles.errorMsg}
+                name="name"
+                component="div"
+              />
+            </div>
+            <div className={styles.inputWrap}>
+              <Field
+                type="email"
+                name="email"
+                className={styles.fieldInput}
+                placeholder="Email*"
+              />
+              <ErrorMessage
+                className={styles.errorMsg}
+                name="email"
+                component="div"
+              />
+            </div>
+            <div className={styles.inputWrap}>
+              <Field name="dataBooking">
+                {({ field }) => (
+                  <DatePicker
+                    {...field}
+                    selected={startDate}
+                    minDate={new Date()}
+                    locale={locale}
+                    placeholderText="Booking date*"
+                    onChange={(date) => {
+                      setStartDate(date);
+                      setFieldValue("dataBooking", date);
+                    }}
+                    className={styles.fieldInput}
+                  />
+                )}
+              </Field>
+              <ErrorMessage
+                className={styles.errorMsg}
+                name="dataBooking"
+                component="div"
+              />
+            </div>
             <Field name="textarea" placeholder="Comment*">
               {({ field }) => (
                 <InputTextarea

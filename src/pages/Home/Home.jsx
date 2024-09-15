@@ -1,9 +1,10 @@
+import React from "react";
 import { Container, LinkButton, Section } from "../../components";
 import { ROUTES_NAME } from "../../helpers/constants/routesVariable";
 
 import styles from "./Home.module.css";
 
-const Home = () => {
+const Home = React.memo(() => {
   return (
     <main className={styles.hero}>
       <Section>
@@ -19,6 +20,8 @@ const Home = () => {
       </Section>
     </main>
   );
-};
+});
+
+Home.displayName = "Home";
 
 export default Home;

@@ -12,6 +12,7 @@ import {
 } from "redux-persist";
 import { vehiclesReducer } from "./vehicle/slice";
 import { filtersReducer } from "./filters/slice";
+import { notificationReducer } from "./notification/slice";
 
 const persistConfig = {
   key: "favorites",
@@ -23,11 +24,21 @@ export const store = configureStore({
   reducer: {
     vehicle: persistReducer(persistConfig, vehiclesReducer),
     filters: filtersReducer,
+    notify: notificationReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: [
+          FLUSH,
+          REHYDRATE,
+          PAUSE,
+          PERSIST,
+          PURGE,
+          REGISTER,
+          "notification/notify",
+        ],
+        ignoredPaths: ["notification.message"],
       },
     }),
 });

@@ -34,3 +34,20 @@
 .loadMore:is(:hover, :focus){
   border-color: var(--btn-hover-color);
 }
+
+
+.toast{
+  position: absolute;
+  top: 2px;
+  right: 0;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  background-color: transparent;
+  border: none;
+}
+
+.toast:is(:hover, :focus){
+  color: var(--btn-hover-color);
+}

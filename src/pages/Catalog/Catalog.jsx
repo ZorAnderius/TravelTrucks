@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   FilterList,
@@ -11,7 +11,7 @@ import { fetchAllVehicle } from "../../redux/vehicle/operation";
 import { selectLoader } from "../../redux/vehicle/selector";
 import styles from "./Catalog.module.css";
 
-const Catalog = () => {
+const Catalog = React.memo(() => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoader);
 
@@ -20,7 +20,7 @@ const Catalog = () => {
   }, [dispatch]);
 
   return isLoading ? (
-    <Loader/>
+    <Loader />
   ) : (
     <main>
       <Section css='catalog'>
@@ -31,6 +31,8 @@ const Catalog = () => {
       </Section>
     </main>
   );
-};
+});
+
+Catalog.displayName = "Catalog";
 
 export default Catalog;

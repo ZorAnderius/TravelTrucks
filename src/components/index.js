@@ -11,3 +11,4 @@ export { default as VehicleReviews } from "./VehicleReviews/VehicleReviews";
 export { default as VehicleNavigation } from "./VehicleNavigation/VehicleNavigation";
 export { default as VehicleFeature } from "./VehicleFeature/VehicleFeature";
 export { default as BookingForm } from "./BookingForm/BookingForm";
+export { default as Notification } from "./Notification/Notification";
