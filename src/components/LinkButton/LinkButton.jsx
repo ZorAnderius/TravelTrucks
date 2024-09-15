@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './LinkButton.module.css';
 
-const LinkButton = ({ styleProp, link, children }) => {
+const LinkButton = ({ type, link, children }) => {
   return (
-    <Link to={link} className={styleProp || styles.btnLink}>
+    <Link to={link} className={styles[type]}>
       {children}
     </Link>
   );

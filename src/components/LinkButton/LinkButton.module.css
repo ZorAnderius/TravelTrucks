@@ -1,4 +1,4 @@
-.btnLink {
+.btn {
   max-width: 173px;
   width: 100%;
   height: 56px;
@@ -14,7 +14,18 @@
   transition: background-color var(--transition-time);
 }
 
-.btnLink:is(:hover, :focus) {
+.btn:is(:hover, :focus) {
   background-color: var(--btn-hover-color);
+}
+
+.review {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--primary-color);
+}
+
+.review:is(:hover, :focus) {
+  text-decoration-line: underline;
+  text-underline-offset: 3px;
 }
 

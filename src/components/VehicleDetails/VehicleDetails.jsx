@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { selectCurrentVehicle } from "../../redux/vehicle/selector";
-import { convertVehiclesData } from "../../helpers";
+import { convertVehiclesData, ROUTES_NAME } from "../../helpers";
 import styles from "./VehicleDetails.module.css";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
+import LinkButton from "../LinkButton/LinkButton";
 
 const VehicleDetails = () => {
   const vehicle = useSelector(selectCurrentVehicle);
@@ -22,10 +24,12 @@ const VehicleDetails = () => {
         <div className={styles.vehicleLocationReview}>
           <div className={styles.vehicleRatingContainer}>
             <span className={clsx("icon-rating", styles.rating)}></span>
-            <p className={styles.ratingValue}>
+            <LinkButton
+              type='review'
+              link={ROUTES_NAME.vehicleReview} >
               {rating}({reviewsQuantity}{" "}
               {reviewsQuantity <= 1 ? "Review" : "Reviews"})
-            </p>
+            </LinkButton>
           </div>
           <div className={styles.locationWrapper}>
             <span className="icon-map"></span>

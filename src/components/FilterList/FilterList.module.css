@@ -6,13 +6,15 @@
   width: 100%;
   height: calc(100vh - 150px);
   overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.filterAside::-webkit-scrollbar{
+.filterAside::-webkit-scrollbar {
   display: none;
 }
 
-.asideContainer{
+.asideContainer {
   max-width: 360px;
   width: 100%;
 }

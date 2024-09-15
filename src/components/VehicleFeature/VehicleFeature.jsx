@@ -8,10 +8,8 @@ import Title from "../Title/Title";
 
 const VehicleFeature = () => {
   const vehicle = useSelector(selectCurrentVehicle);
-
   const facilities = convertFacilitiesBadge(vehicle);
   const vehicleDetails = convertVehicleDetails(vehicle);
-  console.log(vehicleDetails);
   
   return (
     <div className={styles.featuresContainer}>

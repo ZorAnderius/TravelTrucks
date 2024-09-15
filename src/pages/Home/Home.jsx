@@ -13,7 +13,7 @@ const Home = () => {
             <p className={styles.heroSubtitle}>
               You can find everything you want in our catalog
             </p>
-            <LinkButton link={ROUTES_NAME.catalog}>View Now</LinkButton>
+            <LinkButton type='btn' link={ROUTES_NAME.catalog}>View Now</LinkButton>
           </div>
         </Container>
       </Section>

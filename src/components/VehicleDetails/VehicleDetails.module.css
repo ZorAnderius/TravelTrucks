@@ -33,6 +33,10 @@
   gap: 4px;
 }
 
+.ratingValue{
+  color: var(--primary-color);
+}
+
 .ratingValue:is(:hover, :focus) {
   text-decoration-line: underline;
   text-underline-offset: 3px;

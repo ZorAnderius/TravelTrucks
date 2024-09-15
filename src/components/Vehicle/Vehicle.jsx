@@ -16,7 +16,6 @@ const Vehicle = ({ vehicle }) => {
 
   const updatedVehicle = convertVehiclesData(vehicle, 'catalog');
   const {
-    id,
     name,
     imgVehicle,
     price,
@@ -67,11 +66,14 @@ useEffect(() => {
             <div className={styles.ratingWrapper}>
               <span className={clsx("icon-rating", styles.rating)}></span>
               <LinkButton
-                styleProp={styles.reviewLink}
-                link={`${ROUTES_NAME.catalog}/${updatedVehicle.id}/${ROUTES_NAME.vehicleReview}`}
+                type='review'
+                link={{
+                  pathname: `${ROUTES_NAME.catalog}/${updatedVehicle.id}/${ROUTES_NAME.vehicleReview}`,
+                  state: { scrollToReviews: true },
+                }}
               >
                 <p>
-                  {rating}({reviewsQuantity} 
+                  {rating}({reviewsQuantity}
                   {reviewsQuantity <= 1 ? "Review" : "Reviews"})
                 </p>
               </LinkButton>
@@ -90,7 +92,7 @@ useEffect(() => {
             </li>
           ))}
         </ul>
-        <LinkButton link={`${ROUTES_NAME.catalog}/${updatedVehicle.id}`}>
+        <LinkButton type='btn' link={`${ROUTES_NAME.catalog}/${updatedVehicle.id}`}>
           Show more
         </LinkButton>
       </div>
