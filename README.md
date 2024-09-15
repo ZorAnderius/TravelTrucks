@@ -27,7 +27,7 @@
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/Sysqwerty/react_travel_trucks.git
+   git clone https://github.com/ZorAnderius/TravelTrucks.git
 
 2. **Navigate to the Project Directory:**
    ```bash
