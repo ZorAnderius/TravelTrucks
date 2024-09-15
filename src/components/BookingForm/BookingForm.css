@@ -11,12 +11,10 @@
   overflow: hidden;
 }
 
-/* Стилізація заголовка календаря */
 .react-datepicker__header {
   background-color: var(--secondary-color);
   border-bottom: 1px solid var(--main-txt-color);
   padding: 12px;
-
   text-align: center;
 }
 
@@ -93,6 +91,7 @@ h2.react-datepicker__current-month {
 
 .react-datepicker__day:hover,
 .react-datepicker__day:active {
+    color: var(--element-txt-color);
     background: transparent;
 
     &:after {
@@ -103,7 +102,7 @@ h2.react-datepicker__current-month {
     transform: translate(-50%, -50%);
     width: 36px;
     height: 32px;
-    background: var(--element-txt-color);
+    background-color: var(--gray-color);
     border-radius: 50%;
     z-index: -1;
   }
