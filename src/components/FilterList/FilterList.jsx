@@ -61,6 +61,7 @@ const FilterList = memo(() => {
                       onClick={() => {
                         setValues(initialValues);
                         dispatch(resetFilters());
+                        scrollToLoad(0);
                       }}
                     >
                       Reset
