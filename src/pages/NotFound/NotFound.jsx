@@ -9,8 +9,12 @@ const NotFound = React.memo(() => {
     <Section>
       <Container>
         <div className={styles.notFoundContainer}>
-          <h1>Opps...Something went wrong. Please try again</h1>
-          <LinkButton to={ROUTES_NAME.home}>Go to Home</LinkButton>
+          <h1 className={styles.titleError}>
+            Opps...Something went wrong. <span>Please try again</span>
+          </h1>
+          <LinkButton link={ROUTES_NAME.home} type="btn">
+            Go to Home
+          </LinkButton>
           <img src={something_wrong} alt="Something went wrong" />
         </div>
       </Container>

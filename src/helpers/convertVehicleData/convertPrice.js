@@ -3,6 +3,5 @@ export const convertPrice = price =>
     style: 'currency',
     currency: 'EUR',
     minimumFractionDigits: 2,
-    maximumSignificantDigits: 2,
     useGrouping: false,
   }).format(price);
